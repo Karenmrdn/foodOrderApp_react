@@ -31,7 +31,13 @@ const Cart = (props) => {
 
   return (
     <Modal onModalClose={props.onModalClose}>
-      <ul className={classes["cart-items"]}>{cartItems}</ul>
+      <ul className={classes["cart-items"]}>
+        {cartItems.length === 0 ? (
+          <h1 style={{ textAlign: "center" }}>You have not added any items</h1>
+        ) : (
+          cartItems
+        )}
+      </ul>
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>

@@ -57,7 +57,13 @@ const AvailableMeals = () => {
     <section className={classes.meals}>
       <Card>
         {error && <h2 className={classes.error}>{error}</h2>}
-        {isLoading ? <Loader /> : <ul>{mealsList}</ul>}
+        {isLoading ? (
+          <div style={{ textAlign: "center" }}>
+            <Loader />
+          </div>
+        ) : (
+          <ul>{mealsList}</ul>
+        )}
       </Card>
     </section>
   );
